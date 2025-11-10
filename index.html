@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김아영 | AI 페르소나 챗봇 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Inter 폰트를 기본으로 하되, 한글은 Noto Sans KR로 자연스럽게 대체되도록 설정 */
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        // 프로젝트 테마에 맞는 커스텀 색상 (AI, 감성)
+                        primary: {
+                            light: '#a5b4fc',
+                            DEFAULT: '#6366f1',
+                            dark: '#4f46e5',
+                        },
+                        dark: {
+                            900: '#0f172a', // 아주 어두운 배경
+                            800: '#1e293b', // 카드 배경
+                            700: '#334155', // 경계선, 부제목
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-gray-200 antialiased">
+
+    <!-- ==== Header / Navigation ==== -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-dark-900/80 shadow-md shadow-black/10">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-white transition-colors duration-300 hover:text-primary-light">
+                        김아영
+                    </a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-primary-light transition-colors duration-300 font-medium">About Me</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary-light transition-colors duration-300 font-medium">Skills</a>
+                    <a href="#project" class="text-gray-300 hover:text-primary-light transition-colors duration-300 font-medium">Project</a>
+                    <a href="#contact" class="px-4 py-2 bg-primary-dark text-white rounded-md font-semibold text-sm hover:bg-primary transition-transform duration-300 ease-in-out hover:scale-105">
+                        Contact
+                    </a>
+                </div>
+                <!-- Mobile Menu Button (Optional, for smaller screens if needed) -->
+                <div class="md:hidden">
+                    <a href="#contact" class="px-3 py-1.5 bg-primary-dark text-white rounded-md font-semibold text-xs hover:bg-primary transition-transform duration-300 ease-in-out hover:scale-105">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==== Main Content ==== -->
+    <main class="overflow-x-hidden">
+
+        <!-- ==== 1. Hero Section ==== -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute top-0 left-0 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-4000"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto" style="animation: fadeInUp 1s ease-out;">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">
+                    김아영
+                </h1>
+                <p class="text-xl md:text-3xl text-gray-300 leading-relaxed">
+                    생성형 AI 기술로 MBTI를<br class="md:hidden">
+                    <span class="text-primary-light">'살아있는 인격체'</span>처럼 구현하는 개발자
+                </p>
+                <div class="mt-12 flex justify-center gap-4">
+                    <a href="#project" class="px-6 py-3 bg-primary text-white rounded-lg font-semibold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg shadow-primary/20 transform hover:scale-105">
+                        View Project
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-dark-800 text-gray-200 rounded-lg font-semibold text-lg hover:bg-dark-700 transition-all duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== 2. About Me Section ==== -->
+        <section id="about" class="py-24 bg-dark-800/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+                <!-- Profile Image Placeholder -->
+                <div class="flex-shrink-0 w-64 h-64 md:w-80 md:h-80">
+                    <img src="https://placehold.co/400x400/6366f1/ffffff?text=A.Y.KIM" 
+                         alt="김아영 프로필 이미지" 
+                         class="w-full h-full rounded-full object-cover shadow-2xl shadow-primary/20 border-4 border-primary/50">
+                </div>
+                <!-- About Me Text -->
+                <div class="flex-1 text-left md:text-left">
+                    <h2 class="text-4xl font-bold text-white mb-6">About Me</h2>
+                    <p class="text-lg text-gray-300 mb-4 leading-relaxed">
+                        저는 AI 기술이 단순한 정보 검색 도구를 넘어, 사용자와 깊은 정서적 교감을 나눌 수 있는 매개체가 될 수 있다고 믿습니다. 특히 생성형 AI가 가진 가능성에 매력을 느껴, 인공지능소프트웨어학과에서 관련 지식을 쌓아왔습니다.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-4 leading-relaxed">
+                        이번 'AI 페르소나 챗봇' 프로젝트는 저의 이러한 개발 철학을 바탕으로 기획되었습니다. MBTI라는 보편적인 소재를 '살아있는 인격체'로 재창조하여, 사용자가 '나를 이해해주는 AI친구'와 대화하여 정서적 지지와 위로를 얻는 경험을 제공하고자 합니다.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        이 프로젝트를 통해 Llama 기반 모델을 특정 도메인에 맞게 파인튜닝하는 기술적 역량과, 기술을 통해 사용자의 감성을 터치하는 가치를 동시에 보여주고 싶습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== 3. Skills Section ==== -->
+        <section id="skills" class="py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-white mb-12">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Frontend Card -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold text-primary-light mb-4">Frontend</h3>
+                        <p class="text-gray-400 mb-6">채팅 UI/UX 구현을 위한 기술</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="bg-primary/10 text-primary-light px-4 py-1.5 rounded-full font-medium">JavaScript</span>
+                            <span class="bg-primary/10 text-primary-light px-4 py-1.5 rounded-full font-medium">TypeScript</span>
+                            <span class="bg-primary/10 text-primary-light px-4 py-1.5 rounded-full font-medium">React</span>
+                        </div>
+                    </div>
+                    <!-- Backend Card -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold text-green-400 mb-4">Backend & AI</h3>
+                        <p class="text-gray-400 mb-6">모델 학습 및 서빙 기술</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="bg-green-500/10 text-green-300 px-4 py-1.5 rounded-full font-medium">Python</span>
+                            <span class="bg-green-500/10 text-green-300 px-4 py-1.5 rounded-full font-medium">Llama 기반 모델 파인튜닝</span>
+                        </div>
+                    </div>
+                    <!-- DevOps & Tools Card -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold text-sky-400 mb-4">DevOps & Tools</h3>
+                        <p class="text-gray-400 mb-6">데이터 구축 및 협업 도구</p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="bg-sky-500/10 text-sky-300 px-4 py-1.5 rounded-full font-medium">16personalities 기반<br>학습 데이터셋 구축</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== 4. Project Details Section ==== -->
+        <section id="project" class="py-24 bg-dark-800/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-16">Project: AI 페르소나 챗봇</h2>
+
+                <!-- Project Main Image -->
+                <img src="https://placehold.co/1200x600/1e293b/ffffff?text=AI+Persona+Chatbot" 
+                     alt="AI 페르소나 챗봇 메인 이미지"
+                     class="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl mb-16">
+
+                <!-- Problem & Architecture -->
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <!-- Problem Definition -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">문제 정의</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            기존의 MBTI 관련 콘텐츠는 정적인 정보 제공에 그쳐, 각 유형의 특성을 '경험'하고 공감하는 데 한계가 있었습니다. 생성형 AI 기술을 통해 16가지 MBTI 유형을 단순한 텍스트가 아닌 '살아있는 인격체'처럼 경험하는 새로운 방식을 제안하고, 이를 통해 사용자에게 깊은 감성적 교감과 위로를 제공하는 것이 목표였습니다.
+                        </p>
+                    </div>
+                    <!-- Architecture -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">아키텍처 / 설계</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            핵심 설계는 Llama 기반의 범용 언어 모델을 'MBTI 전문가' AI 모델로 특화시키는 것이었습니다. 이를 위해 16personalities의 정보를 심층 분석하여 각 유형의 가치관과 특징을 정의했습니다. 이후, 정의된 페르소나를 기반으로 고품질의 '대화형 데이터셋'을 구축하고, 이를 Llama 모델에 파인튜닝하여 16가지 유형별 'MBTI 특화 모델'을 완성했습니다.
+                        </p>
+                        <!-- Architecture Diagram Placeholder -->
+                        <img src="https://placehold.co/800x600/334155/ffffff?text=Architecture+Diagram" 
+                             alt="아키텍처 다이어그램"
+                             class="w-full h-auto object-cover rounded-lg mt-6 hidden">
+                    </div>
+                </div>
+
+                <!-- Core Features -->
+                <h3 class="text-3xl font-bold text-white text-center mb-12">핵심 기능</h3>
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Feature 1 -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-lg flex flex-col">
+                        <h4 class="text-2xl font-semibold text-primary-light mb-4">페르소나 일관성</h4>
+                        <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                            단순히 말투를 흉내 내는 것이 아니라, 각 MBTI 유형의 내면적 가치관에 기반한 대화를 생성합니다. 특화 모델을 사용함으로써, 매번 긴 프롬프트를 주입할 필요 없이 빠르고 효율적인 응답이 가능합니다. 그 결과, 사용자와의 긴 대화에서도 페르소나가 무너지지 않고 MBTI 유형의 정체성을 일관되게 유지할 수 있습니다.
+                        </p>
+                        <img src="https://placehold.co/800x600/334155/ffffff?text=Feature+1:+Consistency" 
+                             alt="핵심 기능 1: 페르소나 일관성"
+                             class="w-full h-auto object-cover rounded-lg">
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-lg flex flex-col">
+                        <h4 class="text-2xl font-semibold text-primary-light mb-4">깊이 있는 감성적 교감</h4>
+                        <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                            사용자의 고민이나 일상 대화에 대해, 각 MBTI 페르소나가 자신의 가치관에 입각한 깊이 있는 답변을 제공합니다. 이를 통해 사용자는 '나를 이해해 주는 AI 친구'와 대화하는 듯한 경험을 하며 정서적 지지와 위로를 얻을 수 있습니다. 향후 '진로/연애 상담' 등 특정 상황별 시나리오 모드를 추가하여 기능을 확장할 수 있습니다.
+                        </p>
+                        <img src="https://placehold.co/800x600/334155/ffffff?text=Feature+2:+Empathy" 
+                             alt="핵심 기능 2: 감성적 교감"
+                             class="w-full h-auto object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Role & Outcomes -->
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <!-- My Role -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-6">나의 역할 및 기여</h3>
+                        <ul class="space-y-4 text-gray-300 list-disc list-outside ml-5 leading-relaxed">
+                            <li>'AI 페르소나 챗봇' 아이디어 기획 및 'MBTI 전문가' AI 모델 구축 전략 수립</li>
+                            <li>16personalities 정보 분석 및 MBTI 유형별 페르소나 정의</li>
+                            <li>파인튜닝을 위한 고품질 대화형 데이터셋 아키텍처 설계 및 구축</li>
+                            <li>Llama 기반 모델 파인튜닝 프로세스 설계 및 'MBTI 특화 모델' 완성 주도</li>
+                        </ul>
+                    </div>
+                    <!-- Outcomes -->
+                    <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-6">결과 및 성과 (목표)</h3>
+                        <ul class="space-y-4 text-gray-300 list-disc list-outside ml-5 leading-relaxed">
+                            <li>긴 대화에서도 MBTI 유형의 정체성을 일관되게 유지 (목표: 페르소나 일관성 95% 이상)</li>
+                            <li>긴 프롬프트 주입 방식 대비, 빠르고 자연스러운 응답 속도 확보</li>
+                            <li>사용자가 '진짜 같다'고 느끼는 깊이 있는 감성적 교감 및 'AI 친구' 경험 제공</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Retrospective -->
+                <div>
+                    <h3 class="text-3xl font-bold text-white text-center mb-12">회고 (Retrospective)</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Learned -->
+                        <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
+                            <h4 class="text-2xl font-semibold text-green-400 mb-4">배운 점</h4>
+                            <p class="text-gray-300 leading-relaxed">
+                                범용 LLM을 특정 도메인(MBTI)과 페르소나에 특화시키기 위한 파인튜닝 전략과 고품질 데이터셋 구축의 중요성을 깊이 있게 이해할 수 있었습니다. 또한, AI 기술이 단순한 효율화 도구를 넘어 사용자의 정서적 영역에서 긍정적인 역할을 할 수 있다는 가능성을 확인했습니다.
+                            </p>
+                        </div>
+                        <!-- Improvements -->
+                        <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
+                            <h4 class="text-2xl font-semibold text-sky-400 mb-4">개선점</h4>
+                            <p class="text-gray-300 leading-relaxed">
+                                현재는 16가지 기본 페르소나 구현에 중점을 두었지만, 향후에는 '진로/연애 상담' 등 구체적인 '상황별 시나리오 모드'를 추가하고 싶습니다. 또한, 다양한 성격 유형과의 가상 대화를 통해 사용자의 사회적 지능 및 공감 능력 향상에 기여할 수 있는 교육적 기능으로도 발전시킬 계획입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== 5. Contact Section ==== -->
+        <section id="contact" class="py-24">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-white mb-6">Contact</h2>
+                <p class="text-xl text-gray-300 mb-12">
+                    저의 작업이나 아이디어에 대해 더 궁금한 점이 있다면, 언제든지 편하게 연락주세요.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <!-- Email -->
+                    <a href="mailto:lain514@naver.com" class="flex items-center justify-center gap-3 bg-dark-800 px-6 py-4 rounded-lg font-semibold text-lg hover:bg-dark-700 transition-all duration-300 w-full sm:w-auto transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>lain514@naver.com</span>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/ahyeong514" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-dark-800 px-6 py-4 rounded-lg font-semibold text-lg hover:bg-dark-700 transition-all duration-300 w-full sm:w-auto transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.488.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.602-3.369-1.34-3.369-1.34-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.833.092-.647.35-1.087.635-1.338-2.22-.251-4.555-1.107-4.555-4.935 0-1.09.39-1.984 1.03-2.682-.103-.253-.446-1.27.098-2.646 0 0 .84-.269 2.75 1.025A9.548 9.548 0 0112 6.835c.85.003 1.702.115 2.504.336 1.909-1.294 2.748-1.025 2.748-1.025.546 1.376.203 2.393.1 2.646.64.698 1.03 1.592 1.03 2.682 0 3.837-2.338 4.681-4.566 4.929.359.308.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48C19.138 20.162 22 16.416 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                        </svg>
+                        <span>github.com/ahyeong514</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==== Footer ==== -->
+    <footer class="py-8 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            &copy; 2025 김아영. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll JS -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
