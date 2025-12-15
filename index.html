@@ -162,9 +162,9 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-white text-center mb-16">Project: 아티스트 페르소나 챗봇 개발기 (feat. Gemini AI)</h2>
 
-                <img src="https://placehold.co/1200x600/1e293b/ffffff?text=Artist+Persona+Chatbot" 
-                             alt="아티스트 페르소나 챗봇 메인 이미지"
-                             class="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl mb-16">
+                <img src="image4.jpg" 
+                             alt="아티스트 페르소나 챗봇 주요 대화 화면"
+                             class="w-full h-auto max-h-[500px] object-cover object-center rounded-2xl shadow-2xl mb-16">
 
                 <div class="grid md:grid-cols-2 gap-12 mb-16">
                     <div class="bg-dark-800 p-8 rounded-2xl shadow-lg">
@@ -178,30 +178,30 @@
                         <p class="text-gray-300 leading-relaxed">
                             핵심 전략은 **'AI 조련(Taming)'** 이었습니다. 아티스트의 실제 채팅 로그를 정밀 분석하여 '단어', '말투', '반응 패턴' 등 핵심 페르소나 요소를 정의했습니다. 이를 기반으로 고품질의 **대화형 데이터셋**을 구축하고, **Gemini AI**와의 협업 및 **Llama 기반 모델 파인튜닝**을 통해 아티스트의 페르소나와 일관성을 잃지 않는 특화 모델을 완성했습니다.
                         </p>
-                        <img src="Gemini_AI_Analysis.jpg" 
+                        <img src="스크린샷 2025-12-15 오후 2.10.38.jpg" 
                                  alt="Gemini AI를 활용한 원본 데이터 분석 및 JSON 초안 생성 과정"
                                  class="w-full h-auto object-cover rounded-lg mt-6 shadow-md border border-dark-700">
                         <p class="text-sm text-gray-500 mt-2 text-right">출처: 원본 데이터 수집, Gemini에게 분석 요청, AI의 초안(JSON) 생성 과정</p>
                     </div>
                 </div>
 
-                <h3 class="text-3xl font-bold text-white text-center mb-12">핵심 기능</h3>
+                <h3 class="text-3xl font-bold text-white text-center mb-12">핵심 기술</h3>
                 <div class="grid md:grid-cols-2 gap-8 mb-16">
                     <div class="bg-dark-800 p-8 rounded-2xl shadow-lg flex flex-col">
                         <h4 class="text-2xl font-semibold text-primary-light mb-4">핵심 기술 1: '대본' (PersonaStore.swift)</h4>
                         <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
                             AI에게 '무엇을' 연기할지 가르치는 '예시 대본' (JSON)을 만들어 모델에 주입했습니다. '잘게요'라는 입력이 오면 '뿅'을 붙이는 것과 같은 **'예시'**를 직접 제공하여, AI가 '잘자'라는 말을 이해하게 하는 것이 아닌, **특정 문장 패턴에 반응**하게 만드는 것이 '티키타카' 구현의 비결이었습니다.
                         </p>
-                        <img src="https://placehold.co/800x600/334155/ffffff?text=Feature+1:+PersonaStore+(JSON+Rule)" 
+                        <img src="image3.jpg" 
                                  alt="핵심 기술 1: 페르소나 대본 JSON 규칙서"
-                                 class="w-full h-auto object-cover rounded-lg">
+                                 class="w-full h-auto object-cover rounded-lg shadow-md border border-dark-700">
                     </div>
                     <div class="bg-dark-800 p-8 rounded-2xl shadow-lg flex flex-col">
                         <h4 class="text-2xl font-semibold text-primary-light mb-4">핵심 기술 2: '명령서' (OpenAIService.swift)</h4>
                         <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
                             AI의 '착한 챗봇' 본능을 억누르고 페르소나를 유지시키기 위해, **'명령서(System Prompt)'**를 주입했습니다. Gemini와의 의논을 통해 AI의 행동에 **'족쇄'**를 걸고, 응답의 간결함, 어조, 대화 주도권을 명확히 지시했습니다. (예: "당신은 지금부터 [페르소나 규칙서]에 정의된 '페르소나'를 연기하는 '배우'입니다.")
                         </p>
-                        <img src="System_Prompt_Code.jpg" 
+                        <img src="image5.jpg" 
                                  alt="핵심 기술 2: 시스템 프롬프트 코드 및 명령 목록"
                                  class="w-full h-auto object-cover rounded-lg shadow-md border border-dark-700">
                     </div>
