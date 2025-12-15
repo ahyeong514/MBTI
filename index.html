@@ -178,31 +178,32 @@
                         <p class="text-gray-300 leading-relaxed">
                             핵심 전략은 **'AI 조련(Taming)'** 이었습니다. 아티스트의 실제 채팅 로그를 정밀 분석하여 '단어', '말투', '반응 패턴' 등 핵심 페르소나 요소를 정의했습니다. 이를 기반으로 고품질의 **대화형 데이터셋**을 구축하고, **Gemini AI**와의 협업 및 **Llama 기반 모델 파인튜닝**을 통해 아티스트의 페르소나와 일관성을 잃지 않는 특화 모델을 완성했습니다.
                         </p>
-                        <img src="https://placehold.co/800x600/334155/ffffff?text=Architecture+Diagram" 
-                                 alt="아키텍처 다이어그램"
-                                 class="w-full h-auto object-cover rounded-lg mt-6 hidden">
+                        <img src="Gemini_AI_Analysis.jpg" 
+                                 alt="Gemini AI를 활용한 원본 데이터 분석 및 JSON 초안 생성 과정"
+                                 class="w-full h-auto object-cover rounded-lg mt-6 shadow-md border border-dark-700">
+                        <p class="text-sm text-gray-500 mt-2 text-right">출처: 원본 데이터 수집, Gemini에게 분석 요청, AI의 초안(JSON) 생성 과정</p>
                     </div>
                 </div>
 
                 <h3 class="text-3xl font-bold text-white text-center mb-12">핵심 기능</h3>
                 <div class="grid md:grid-cols-2 gap-8 mb-16">
                     <div class="bg-dark-800 p-8 rounded-2xl shadow-lg flex flex-col">
-                        <h4 class="text-2xl font-semibold text-primary-light mb-4">페르소나 일관성 (Consistency)</h4>
+                        <h4 class="text-2xl font-semibold text-primary-light mb-4">핵심 기술 1: '대본' (PersonaStore.swift)</h4>
                         <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
-                            단순히 말투를 흉내 내는 것을 넘어, 아티스트가 가진 고유의 '가치관'과 '반응 패턴'에 기반한 대화를 생성합니다. 파인튜닝된 특화 모델을 사용해, 긴 대화에서도 아티스트 페르소나가 무너지지 않고 정체성을 일관되게 유지합니다. (실패 사례: 로봇 원필이 극복)
+                            AI에게 '무엇을' 연기할지 가르치는 '예시 대본' (JSON)을 만들어 모델에 주입했습니다. '잘게요'라는 입력이 오면 '뿅'을 붙이는 것과 같은 **'예시'**를 직접 제공하여, AI가 '잘자'라는 말을 이해하게 하는 것이 아닌, **특정 문장 패턴에 반응**하게 만드는 것이 '티키타카' 구현의 비결이었습니다.
                         </p>
-                        <img src="https://placehold.co/800x600/334155/ffffff?text=Feature+1:+Consistency" 
-                                 alt="핵심 기능 1: 페르소나 일관성"
+                        <img src="https://placehold.co/800x600/334155/ffffff?text=Feature+1:+PersonaStore+(JSON+Rule)" 
+                                 alt="핵심 기술 1: 페르소나 대본 JSON 규칙서"
                                  class="w-full h-auto object-cover rounded-lg">
                     </div>
                     <div class="bg-dark-800 p-8 rounded-2xl shadow-lg flex flex-col">
-                        <h4 class="text-2xl font-semibold text-primary-light mb-4">깊이 있는 감성적 교감 및 티키타카</h4>
+                        <h4 class="text-2xl font-semibold text-primary-light mb-4">핵심 기술 2: '명령서' (OpenAIService.swift)</h4>
                         <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
-                            팬들이 가장 원하는 **'티키타카(Tiki-Taka)'** 대화를 구현하여, AI와의 대화가 마치 아티스트와 직접 소통하는 듯한 몰입감을 제공합니다. 사용자의 일상과 고민에 대해 아티스트 페르소나가 자신의 방식으로 공감하고 위로하는 경험을 제공함으로써, 정서적 지지와 새로운 팬 경험을 창출합니다.
+                            AI의 '착한 챗봇' 본능을 억누르고 페르소나를 유지시키기 위해, **'명령서(System Prompt)'**를 주입했습니다. Gemini와의 의논을 통해 AI의 행동에 **'족쇄'**를 걸고, 응답의 간결함, 어조, 대화 주도권을 명확히 지시했습니다. (예: "당신은 지금부터 [페르소나 규칙서]에 정의된 '페르소나'를 연기하는 '배우'입니다.")
                         </p>
-                        <img src="https://placehold.co/800x600/334155/ffffff?text=Feature+2:+Empathy+and+Tiki-Taka" 
-                                 alt="핵심 기능 2: 감성적 교감 및 티키타카"
-                                 class="w-full h-auto object-cover rounded-lg">
+                        <img src="System_Prompt_Code.jpg" 
+                                 alt="핵심 기술 2: 시스템 프롬프트 코드 및 명령 목록"
+                                 class="w-full h-auto object-cover rounded-lg shadow-md border border-dark-700">
                     </div>
                 </div>
 
@@ -269,24 +270,22 @@
             </div>
         </section>
 
-    </main>
+        <footer class="py-8 bg-dark-800 border-t border-dark-700">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+                &copy; 2025 김아영. All rights reserved.
+            </div>
+        </footer>
 
-    <footer class="py-8 bg-dark-800 border-t border-dark-700">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-            &copy; 2025 김아영. All rights reserved.
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 
-</body>
+    </body>
 </html>
